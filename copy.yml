@@ -1,0 +1,33 @@
+server:
+  port: 9999
+  host: "0.0.0.0"
+  mode: "debug"  # debug 或 release
+
+api:
+  endpoint: "https://api.dify.ai/v1/workflows/run"
+  dify_api_key: "xxxxxxxxxxxxxxxx"
+
+mail:
+  smtp_server: "smtp.feishu.cn"
+  smtp_port: 465  # 飞书使用465端口
+  smtp_username: "xxxxxxxx"
+  smtp_password: "xxxxxxxx"
+  sender_name: "算命大师"
+
+# 可选的日志配置
+logging:
+  level: "info"  # debug, info, warn, error
+  file: "logs/app.log"
+  max_size: 100    # MB
+  max_backups: 3
+  max_age: 28      # 天
+
+# 可选的限流配置
+rate_limit:
+  enabled: true
+  requests_per_second: 10
+
+# 可选的超时配置
+timeouts:
+  api_request: 30  # 秒
+  email_send: 10   # 秒 
